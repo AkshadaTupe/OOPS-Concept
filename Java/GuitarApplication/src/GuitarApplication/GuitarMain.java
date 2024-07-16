@@ -1,5 +1,9 @@
 package GuitarApplication;
 
+import GuitarApplication.GuitarEnum.Builder;
+import GuitarApplication.GuitarEnum.Type;
+import GuitarApplication.GuitarEnum.Wood;
+
 public class GuitarMain {
 
 	public static void main(String[] args) {
@@ -17,18 +21,12 @@ public class GuitarMain {
 			System.out.println("Guitar with serial number not found");
 		
 		
-		Guitar whatErinLikes = new Guitar("", "Martin", "", "", "Rosewood", "Spruce",0);
+		Guitar whatErinLikes = new Guitar("", Builder.MARTIN, "", null, Wood.INDIAN_ROSEWOOD, Wood.SITKA,0);
 		
 		guitar = inventory.search(whatErinLikes);
 		
 		displayGuitarDetails(guitar);
 		
-		
-		Guitar whatErinLikes2 = new Guitar("", "martin", "", "", "Rosewood", "Spruce",0);
-		
-		guitar = inventory.search(whatErinLikes2);
-		
-		displayGuitarDetails(guitar);
 	}
 
 	private static void displayGuitarDetails(Guitar guitar)
@@ -51,8 +49,8 @@ public class GuitarMain {
 	}
 	private static void initializeInventory(Inventory inventory)
 	{
-		inventory.addGuitar("SN001", "Gibson", "Les Paul", "Electric", "Mahogany", "Maple", 2499.99);
-		inventory.addGuitar("SN002", "Fender", "Stratocaster", "Electric", "Alder", "Alder", 1399.99);
-		inventory.addGuitar("SN003", "Martin", "D-28", "Acoustic", "Rosewood", "Spruce", 2999.99);
+		inventory.addGuitar("SN001", Builder.GIBSON, "Les Paul", Type.ELECTRIC, Wood.MAHOGANY, Wood.MAPLE, 2499.99);
+		inventory.addGuitar("SN002",Builder.FENDER, "Stratocaster", Type.ELECTRIC, Wood.ALDER, Wood.ALDER, 1399.99);
+		inventory.addGuitar("SN003", Builder.MARTIN, "D-28", Type.ACOUSTIC, Wood.INDIAN_ROSEWOOD, Wood.SITKA, 2999.99);
 	}
 }
