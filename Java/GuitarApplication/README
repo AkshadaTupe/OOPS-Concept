@@ -1,0 +1,7 @@
+
+Part 1
+1. Customer Can Search Guitar Based on Serial Number
+2. Customer Can Search by sending specific type, model, or wood type
+
+Bug
+1. If the case of parameters given by customer doesnt match then appropriate guitar is not found
