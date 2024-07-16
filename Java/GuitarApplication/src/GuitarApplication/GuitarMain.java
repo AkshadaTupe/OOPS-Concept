@@ -1,5 +1,8 @@
 package GuitarApplication;
 
+import java.util.Iterator;
+import java.util.List;
+
 import GuitarApplication.GuitarEnum.Builder;
 import GuitarApplication.GuitarEnum.Type;
 import GuitarApplication.GuitarEnum.Wood;
@@ -21,25 +24,30 @@ public class GuitarMain {
 			System.out.println("Guitar with serial number not found");
 		
 		
-		Guitar whatErinLikes = new Guitar("", Builder.MARTIN, "", null, Wood.INDIAN_ROSEWOOD, Wood.SITKA,0);
+		Guitar whatErinLikes = new Guitar("", null, "",  Type.ELECTRIC,null, null,0);
 		
-		guitar = inventory.search(whatErinLikes);
+		List matchingGuitars = inventory.search(whatErinLikes);
 		
-		displayGuitarDetails(guitar);
+		displayGuitarDetails(matchingGuitars);
 		
 	}
 
-	private static void displayGuitarDetails(Guitar guitar)
+	private static void displayGuitarDetails(List matchingGuitar)
 	{
-		if(guitar != null)
+		
+		if(!matchingGuitar.isEmpty())
 		{
-			System.out.println("Erin you might like Guitar with below specification:\n"+
-		                        "Builder : " + guitar.getBuilder() + "\n" +
-		                        "Model : " + guitar.getModel() + "\n" + 
-		                        "Type : " + guitar.getType() + "\n" +
-		                        "TopWood : " + guitar.getTopWood() + "\n" +
-		                        "Backwood : " + guitar.getBackWood() + "\n" +
-		                        "price : " + guitar.getPrice() + "\n" );
+			for(Iterator i = matchingGuitar.iterator();i.hasNext();)
+			{
+				Guitar guitar = (Guitar)i.next();
+				System.out.println("Erin you might like Guitar with below specification:\n"+
+                        "Builder : " + guitar.getBuilder() + "\n" +
+                        "Model : " + guitar.getModel() + "\n" + 
+                        "Type : " + guitar.getType() + "\n" +
+                        "TopWood : " + guitar.getTopWood() + "\n" +
+                        "Backwood : " + guitar.getBackWood() + "\n" +
+                        "price : " + guitar.getPrice() + "\n" );
+			}
 		}
 		else
 		{
