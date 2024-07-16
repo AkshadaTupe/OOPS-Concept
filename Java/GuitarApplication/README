@@ -5,3 +5,10 @@ Part 1
 
 Bug
 1. If the case of parameters given by customer doesnt match then appropriate guitar is not found
+
+Part 2
+Fixed Part1 Bug
+Replaced String With Enum for few parameters which will provide compile-time type checking, reducing errors from passing invalid strings.
+
+Advantages of Using Enum Over String
+1. Avoid getting bad data for anything that has a standard range or set of legal values.
