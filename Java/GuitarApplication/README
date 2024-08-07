@@ -12,3 +12,9 @@ Replaced String With Enum for few parameters which will provide compile-time typ
 
 Advantages of Using Enum Over String
 1. Avoid getting bad data for anything that has a standard range or set of legal values.
+
+Part 3
+New Update :
+he wants his search tool to return all the guitars that match his client’s specs, not just the first one in his inventory.
+
+Updated the search functionality
