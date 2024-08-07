@@ -18,3 +18,7 @@ New Update :
 he wants his search tool to return all the guitars that match his client’s specs, not just the first one in his inventory.
 
 Updated the search functionality
+
+Part 4
+- Encapsulated the guitar properties out of Guitar, and put them in their own separate object
+- Created a seperate class Guitarspec : include specifications which customer can search for 
